@@ -3,7 +3,7 @@ import classes from './Legend.module.css';
 
 const legend = (props) => {
     return (
-        <div>
+        <div className = {classes.Legend}>
             {Object.keys(props.legendMarkers).map(key => (                
                 <div key={key} onClick={() => props.filter(key)}>
                     {props.zoom <=12 ?
