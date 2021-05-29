@@ -1,6 +1,8 @@
-/* .NavigationBar {
-    position: fixed;
-} */
+.NavigationBar {
+    /* position: fixed; */
+    background-color:rgba(35, 55, 75, 0.9);
+    font: 15px/24px monospace;
+}
 
 .NavigationBar ul {
     list-style: none;
