@@ -1,0 +1,16 @@
+.modalBackground {
+    background-color: rgba(35, 55, 75, 0.9);
+    color: #ffffff;
+    padding: 6px 12px;
+    font: 15px/24px monospace;
+    z-index: 100;
+    position: absolute;
+    top: 10%;
+    left: 0;    
+    width: 90vw;
+    height: 80vh;
+    margin: 12px;
+    border-radius: 4px;    
+    /* width: max-content; */
+    max-width: 100%;
+}

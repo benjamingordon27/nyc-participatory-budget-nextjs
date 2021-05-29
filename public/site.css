@@ -1,0 +1,75 @@
+.website {
+    background-color: rgba(35, 55, 75, 0.9);   
+    color: #ffffff; 
+    font: 15px/24px monospace;
+}
+
+.map-container {
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%;
+}
+
+.legend {
+    /* background-color: rgba(35, 55, 75, 0.9); */
+    color: #ffffff;
+    padding: 6px 12px;
+    font: 15px/24px monospace;
+    z-index: 1;
+    position: absolute;        
+    margin: 12px;
+    border-radius: 4px;
+}
+
+.clickButton {
+    /* background-color: rgba(35, 55, 75, 0.9); */
+    color: #ffffff;
+    padding: 6px 12px;
+    font: 15px/24px monospace;
+    z-index: 1;
+    position: absolute;        
+    margin: 12px 4px;
+    width: auto;
+    border-radius: 4px;
+}
+
+.clickButton button {
+    font: 15px/24px monospace;
+    background-color: rgba(35, 55, 75, 0.9);
+    color: #ffffff;
+}
+
+
+.sidebar {
+    background-color: rgba(35, 55, 75, 0.9);
+    color: #ffffff;
+    padding: 6px 6px;
+    font: 15px/24px monospace;
+    z-index: 1;
+    /* position: absolute; */
+    
+    /* top: 10vh; */
+    left: 0;
+    margin: 12px;
+    border-radius: 4px;
+    height: auto;
+    width: auto;
+    /* width: 40%; */
+}
+
+.sidebar a{
+    color: #ffffff;
+}
+
+.controls {
+    background-color: rgba(35, 55, 75, 0.9);
+    color: #ffffff;
+    padding: 6px 12px;
+    font: 15px/24px monospace;
+    z-index: 1;
+    /* position: absolute; */
+    /* top: 0;     */
+    margin: 12px;
+    border-radius: 4px;
+}

@@ -1,0 +1,29 @@
+/* .NavigationBar {
+    position: fixed;
+} */
+
+.NavigationBar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.NavigationBar li {
+    display: inline-block;
+    margin: 20px;
+}
+
+.NavigationBar a {
+    text-decoration: none;
+    color: black;
+    color: #ffffff; 
+}
+
+.NavigationBar a:hover,
+.NavigationBar a:active,
+.NavigationBar a.active {
+    background-color: blueviolet;
+    color: white;
+}
