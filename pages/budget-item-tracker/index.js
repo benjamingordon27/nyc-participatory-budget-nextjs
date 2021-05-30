@@ -1,3 +1,4 @@
+import {useRouter} from 'next/router';
 import React, {useContext, useState, useEffect} from 'react';
 import BudgetItemTrackerList from '../../containers/BudgetItemTrackerList/BudgetItemTrackerList';
 import DistrictDataContext from '../../store/dataContext/dataContext';
@@ -7,8 +8,9 @@ import Controls from '../../containers/Controls/Controls';
 
 const BudgetItemTrackerPage = () => {
 
-    const districtsDataContext = useContext(DistrictDataContext);    
-    console.log(districtsDataContext);
+    const router = useRouter();    
+
+    const districtsDataContext = useContext(DistrictDataContext);            
 
     const [trackerList, setTrackerList] = useState([]);
     
@@ -27,6 +29,7 @@ const BudgetItemTrackerPage = () => {
                 );
             }));
             console.log(trackerList);
+            router.push(router.route + '?query='+event.toLowerCase())
         }
     };    
 
