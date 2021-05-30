@@ -5,7 +5,6 @@ import Legend from '../../containers/Legend/Legend'
 import {mapMarkerImgs} from '../../components/MapMarker/mapMarkerImgs';
 import SidebarContext from '../../store/dataContext/sidebarContext';
 import ControlsContext from '../../store/dataContext/controlsContext';
-import Controls from '../../containers/Controls/Controls';
 
 const TrackerMapPage = () => {    
     const sidebarContext = useContext(SidebarContext);

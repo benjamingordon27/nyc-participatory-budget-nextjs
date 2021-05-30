@@ -1,3 +1,4 @@
+import {useRouter} from 'next/router';
 import React, {useContext, useCallback} from 'react';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import ControlsContext from '../../store/dataContext/controlsContext';
@@ -7,33 +8,100 @@ import * as actions from '../../store/actions/actionTypes';
 
 let Controls = (props) => {
 
+    const router = useRouter();     
+
     const controlsContext = useContext(ControlsContext);
     const districtsDataContext = useContext(DistrictsDataContext);
 
     const changeAgencyControls = useCallback( (agency) => {
         document.getElementById('agencyDropdown').value = agency;
         controlsContext.dispatchControls({type: actions.UPDATE_AGENCY, agency: agency});
-    },[controlsContext.agency]);
+        router.replace(
+            {
+              pathname: router.pathname,
+              query:  {
+                ...router.query, // list all the queries here
+                agency: agency // override the color property
+              },
+            },
+            undefined,
+            {
+              shallow: true,
+            },
+          );
+    },[controlsContext.agency, router]);
 
     const changeStatusControls = useCallback( (status) => {
         document.getElementById('statusDropdown').value = status;
-        controlsContext.dispatchControls({type: actions.UPDATE_STATUS, status: status});
-    },[controlsContext.agency]);    
+        controlsContext.dispatchControls({type: actions.UPDATE_STATUS, status: status});        
+        router.replace(
+            {
+              pathname: router.pathname,
+              query:  {
+                ...router.query, // list all the queries here
+                status: status // override the color property
+              },
+            },
+            undefined,
+            {
+              shallow: true,
+            },
+          );
+    },[controlsContext.agency, router]);    
 
     const changeCategoryControls = useCallback( (category) => {
         document.getElementById('categoryDropdown').value = category;
         controlsContext.dispatchControls({type: actions.UPDATE_CATEGORY, category: category});
-    },[controlsContext.agency]);    
+        router.replace(
+            {
+              pathname: router.pathname,
+              query:  {
+                ...router.query, // list all the queries here
+                category: category // override the color property
+              },
+            },
+            undefined,
+            {
+              shallow: true,
+            },
+          );
+    },[controlsContext.agency, router]);    
 
     const changeYearControls = useCallback( (year) => {
         document.getElementById('yearDropdown').value = year;
         controlsContext.dispatchControls({type: actions.UPDATE_YEAR, year: year});
-    },[controlsContext.agency]);
+        router.replace(
+            {
+              pathname: router.pathname,
+              query:  {
+                ...router.query, // list all the queries here
+                year: year // override the color property
+              },
+            },
+            undefined,
+            {
+              shallow: true,
+            },
+          );
+    },[controlsContext.agency, router]);
 
     const changeDistrictControls = useCallback( (district) => {
         document.getElementById('districtDropdown').value = district;
         controlsContext.dispatchControls({type: actions.UPDATE_DISTRICT, district: district});
-    },[controlsContext.agency]);
+        router.replace(
+            {
+              pathname: router.pathname,
+              query:  {
+                ...router.query, // list all the queries here
+                district: district // override the color property
+              },
+            },
+            undefined,
+            {
+              shallow: true,
+            },
+          );
+    },[controlsContext.agency, router]);
 
     return (
         <div className="controls" style={{...props.propsStyle, left: '0'}}>

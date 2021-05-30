@@ -1,3 +1,4 @@
+import {useRouter} from 'next/router';
 import React, { useRef, useEffect, useState, useReducer, useCallback, useContext } from 'react';
 import {mapStateReducer} from '../../store/reducers/reducers';
 import {googleCivicAxios} from '../../axios-order';
@@ -19,7 +20,7 @@ import mapboxgl from '!mapbox-gl';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const TrackerMap = React.memo( () => {
-
+    const router = useRouter();
     const districtsDataContext = useContext(DistrictDataContext);
     const sidebarContext = useContext(SidebarContext);  
     const controlsContext = useContext(ControlsContext);
@@ -52,6 +53,17 @@ const TrackerMap = React.memo( () => {
     };
 
     const centerMap = useCallback( () => {
+        router.replace(
+            {
+              pathname: router.pathname,
+              query:  {},
+            },
+            undefined,
+            {
+              shallow: true,
+            },
+          );
+
         useStateMap.flyTo({
             center: [-73.893097, 40.727013],
             zoom: 9.5,
