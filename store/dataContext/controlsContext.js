@@ -1,3 +1,4 @@
+import {useRouter} from 'next/router'
 import React, {useReducer, useCallback} from 'react';
 import {controlsReducer} from '../reducers/reducers';
 import * as actions from '../actions/actionTypes';
@@ -5,6 +6,8 @@ import * as actions from '../actions/actionTypes';
 const ControlsContext = React.createContext();
 
 export const ControlsContextProvider = (props) => {
+
+    const router = useRouter();
 
     const [controls, dispatchControls] = useReducer(controlsReducer, {
         category: '', 
@@ -17,6 +20,19 @@ export const ControlsContextProvider = (props) => {
     const changeCategoryControls = useCallback( (category) => {
         document.getElementById('categoryDropdown').value = category;
         dispatchControls({type: actions.UPDATE_CATEGORY, category: category});
+        router.replace(
+            {
+              pathname: router.pathname,
+              query:  {
+                ...router.query, // list all the queries here
+                category: category // override the color property
+              },
+            },
+            undefined,
+            {
+              shallow: true,
+            },
+          );
     },[controls.agency]);  
     
     const clearControls = () => {
