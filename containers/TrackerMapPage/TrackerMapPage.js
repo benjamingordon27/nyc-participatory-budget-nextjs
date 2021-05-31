@@ -14,7 +14,7 @@ const TrackerMapPage = () => {
         <div>
             {/* <Controls /> */}            
             <div style={{display:'flex', flexDirection:'row'}}>
-                <div style={{position: 'relative', width: '45%', height:'100vh', left: '0'}}>
+                <div>
                     <Sidebar />
                 </div>            
                 <div style={{position: 'relative',width: '100%', height:'100vh', right: '0',overflowY: 'scroll'}}>
