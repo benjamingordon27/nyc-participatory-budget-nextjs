@@ -17,8 +17,10 @@
 .dropdownContent li{
     list-style: none;
     border: 1px solid black;
+    z-index: 0;
 }
 
 .dropdown:hover .dropdownContent{
     display: block;
+    z-index: 1;
 }
