@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
       <DistrictsDataContextProvider>
         <SidebarContextProvider>
           <ControlsContextProvider>
-            <NavigationBar />
+            {/* <NavigationBar /> */}
             <Component {...pageProps} />
           </ControlsContextProvider>
         </SidebarContextProvider>

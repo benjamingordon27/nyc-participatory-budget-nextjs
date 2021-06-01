@@ -4,12 +4,21 @@
     font: 15px/24px monospace;
 }
 
+.pageContainer {
+    display: flex;
+    flex-direction: column; 
+    min-height: 97vh;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;     
+}
+
 .map-container {
-    position: absolute; 
+    position: relative; 
     top: 0; 
     bottom: 0; 
-    width: 100%;
-    height: 100vh;
+    /* width: 100%; */
+    height: 100%;
 }
 
 .legend {
@@ -19,8 +28,9 @@
     font: 15px/24px monospace;
     z-index: 1;
     position: absolute;        
-    margin: 12px;
-    border-radius: 4px;
+    /* margin: 12px; */
+    /* border-radius: 4px; */
+    /* overflow: auto; */
 }
 
 .clickButton {
@@ -48,19 +58,13 @@
     padding: 10px;
     font: 15px/24px monospace;
     z-index: 1;
-    /* position: absolute; */
-    /* style={{position: 'relative', width: '45%', height:'100vh', left: '0'}} */
-    position: relative;    
-    /* top: 10vh; */
-    left: 0;
-    margin-left: 0px;    
-    border-radius: 1px;
-    height: auto;
-    /* width: auto; */
+    position: relative;            
+    margin-left: 0px;        
+    height: 100%;    
     width: 100%;    
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
 
 .sidebar a{

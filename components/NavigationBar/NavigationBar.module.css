@@ -4,17 +4,27 @@
     font: 15px/24px monospace;
 }
 
+.NavigationBar li:nth-child(2){    
+    margin-right: auto;
+}
+
+.NavigationBar li:last-child{    
+    margin-right: auto;
+    /* margin-left: auto; */
+}
+
 .NavigationBar ul {
     list-style: none;
+    display: flex;
     margin: 0;
     padding: 0;
     width: 100%;
-    text-align: center;
+    color: #ffffff;     
 }
 
 .NavigationBar li {
-    display: inline-block;
-    margin: 15px;
+    flex: 0 0 auto;
+    margin: 8px;    
     /* padding: 15px; */
 }
 
