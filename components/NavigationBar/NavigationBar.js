@@ -20,18 +20,17 @@ const navigationBar = (props) => {
                         sidebarContext.dispatchSidebarData({type: actions.CLEAR_CLICKED_DISTRICT_REDUCER});
                         sidebarContext.dispatchSidebarData({type: actions.CLEAR_CLICKED_ITEM_REDUCER});
                     }}><Link href='/'>About</Link> | </li>                    
-                    <li><Link href='/budget-item-tracker'>Budget Item Tracker</Link></li>                    
-                    
-                    <li style = {{float: 'left', margin: '6px'}}>
+                    <li><Link href='/budget-item-tracker'>Budget Item Tracker</Link></li>                                        
                         {districtsDataContext.participatoryBudgetTracker ? 
-                            <HoverDropdown 
-                                id = {'agencyHoverDropdown'}
-                                title = 'Agency' 
-                                list={uniqueValueBudget(districtsDataContext.participatoryBudgetTracker.features, 'agency')}
-                                clicked={(event) => {console.log(event.target.innerHTML); changeAgencyControls(event.target.innerHTML)}}
-                            />
-                        : <p>Agency |</p>}    
-                    </li>
+                            <li>
+                                <HoverDropdown 
+                                    id = {'agencyHoverDropdown'}
+                                    title = 'Agency' 
+                                    list={uniqueValueBudget(districtsDataContext.participatoryBudgetTracker.features, 'agency')}
+                                    clicked={(event) => {console.log(event.target.innerHTML); changeAgencyControls(event.target.innerHTML)}}
+                                />
+                            </li>
+                        : <li>Agency |</li>}                        
                     <li>Project Status | </li>
                     <li>Category | </li>
                     <li>Year | </li>
