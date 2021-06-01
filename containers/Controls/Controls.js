@@ -105,17 +105,7 @@ let Controls = (props) => {
     },[controlsContext.agency, router]);
 
     return (
-        <div className="controls" style={{...props.propsStyle, left: '0'}}>
-          <div style = {{float: 'left', margin: '6px'}}>
-                {districtsDataContext.participatoryBudgetTracker ? 
-                    <HoverDropdown 
-                        id = {'agencyHoverDropdown'}
-                        title = 'Agency' 
-                        list={uniqueValueBudget(districtsDataContext.participatoryBudgetTracker.features, 'agency')}
-                        clicked={(event) => {console.log(event.target.innerHTML); changeAgencyControls(event.target.innerHTML)}}
-                    />
-                : null}    
-            </div>
+        <div className="controls" style={{...props.propsStyle, left: '0'}}>          
             <div style = {{float: 'left', margin: '6px'}}>
                 {districtsDataContext.participatoryBudgetTracker ? 
                     <Dropdown 
