@@ -2,11 +2,13 @@ import React, {useContext} from 'react';
 import classes from './NavigationBar.module.css';
 import Link from 'next/link';
 import SidebarContext from '../../store/dataContext/sidebarContext';
+import DistrictsDataContext from '../../store/dataContext/sidebarContext';
 import * as actions from '../../store/actions/actionTypes';
 import Controls from '../../containers/Controls/Controls';
 
 const navigationBar = (props) => {
     const sidebarContext = useContext(SidebarContext);
+    const districtsDataContext = useContext(DistrictsDataContext);
 
     return(
         <header className={classes.NavigationBar}>
