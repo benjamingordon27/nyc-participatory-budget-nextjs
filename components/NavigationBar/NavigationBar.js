@@ -12,6 +12,8 @@ const navigationBar = (props) => {
     const sidebarContext = useContext(SidebarContext);
     const districtsDataContext = useContext(DistrictsDataContext);
 
+    console.log(districtsDataContext.participatoryBudgetTracker);
+
     return(
         <header className={classes.NavigationBar}>
             <nav>
