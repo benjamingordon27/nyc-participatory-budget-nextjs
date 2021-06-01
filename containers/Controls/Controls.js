@@ -5,6 +5,7 @@ import ControlsContext from '../../store/dataContext/controlsContext';
 import DistrictsDataContext from '../../store/dataContext/dataContext';
 import {uniqueValueBudget, uniqueValueCouncilMember} from '../../util/utility';
 import * as actions from '../../store/actions/actionTypes';
+import HoverDropdown from '../../components/HoverDropdown/HoverDropdown';
 
 let Controls = (props) => {
 
@@ -13,7 +14,7 @@ let Controls = (props) => {
     const controlsContext = useContext(ControlsContext);
     const districtsDataContext = useContext(DistrictsDataContext);
 
-    const changeAgencyControls = useCallback( (agency) => {
+    const changeAgencyControls = useCallback( (agency) => {        
         document.getElementById('agencyDropdown').value = agency;
         controlsContext.dispatchControls({type: actions.UPDATE_AGENCY, agency: agency});
         router.replace(
@@ -105,6 +106,16 @@ let Controls = (props) => {
 
     return (
         <div className="controls" style={{...props.propsStyle, left: '0'}}>
+          <div style = {{float: 'left', margin: '6px'}}>
+                {districtsDataContext.participatoryBudgetTracker ? 
+                    <HoverDropdown 
+                        id = {'agencyHoverDropdown'}
+                        title = 'Agency' 
+                        list={uniqueValueBudget(districtsDataContext.participatoryBudgetTracker.features, 'agency')}
+                        clicked={(event) => {console.log(event.target.innerHTML); changeAgencyControls(event.target.innerHTML)}}
+                    />
+                : null}    
+            </div>
             <div style = {{float: 'left', margin: '6px'}}>
                 {districtsDataContext.participatoryBudgetTracker ? 
                     <Dropdown 
