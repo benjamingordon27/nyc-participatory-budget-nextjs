@@ -1,13 +1,14 @@
 .website {
     background-color: rgba(35, 55, 75, 0.9);   
     color: #ffffff; 
-    font: 15px/24px monospace;
+    font: 15px/24px monospace;    
 }
 
 .pageContainer {
     display: flex;
     flex-direction: column; 
-    min-height: 97vh;
+    /* min-height: 97vh; */
+    height: 100vh;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;     

@@ -11,20 +11,18 @@ const TrackerMapPage = () => {
     const sidebarContext = useContext(SidebarContext);
     const controlsContext = useContext(ControlsContext);                    
 
-    return(             
-        <div className='pageContainer'>
-            <div style={{display:'flex', flexDirection:'row', overflow: 'auto', flex: '1'}}>
-                <div style={{flex: '2', order: '1'}}>                    
-                    <Sidebar />                    
-                </div>            
-                <div style={{flex: '3', order: '2'}}>
-                    <TrackerMap />                                          
-                </div>            
-                <div className = 'legend' style={{position: 'relative',marginRight: 'auto', flex: '0.75', order: '3'}}>
-                    <Legend legendMarkers = {mapMarkerImgs} zoom = {sidebarContext.zoom} filter={controlsContext.changeCategoryControls}/>
-                </div>            
-            </div>
-        </div>
+    return(                     
+        <div style={{display:'flex', flexDirection:'row', flex: '1'}}>
+            <div style={{flex: '2', order: '1', overflow: 'scroll'}}>                    
+                <Sidebar />                    
+            </div>            
+            <div style={{flex: '3', order: '2', overflow: 'scroll'}}>
+                <TrackerMap />                                          
+            </div>            
+            <div className = 'legend' style={{position: 'relative',marginRight: 'auto', flex: '0.75', order: '3', overflow: 'scroll'}}>
+                <Legend legendMarkers = {mapMarkerImgs} zoom = {sidebarContext.zoom} filter={controlsContext.changeCategoryControls}/>
+            </div>            
+        </div>        
     );
 };
 
