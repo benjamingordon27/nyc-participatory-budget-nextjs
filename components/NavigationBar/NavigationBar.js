@@ -136,9 +136,27 @@ const navigationBar = (props) => {
                                 clicked={(event) => {changeStatusControls(event.target.innerHTML)}}
                             />
                          </li>
-                    : <li>Agency |</li>}  
-                    <li>Category | </li>
-                    <li>Year | </li>
+                    : <li>Project Status |</li>}  
+                    {districtsDataContext.participatoryBudgetTracker ? 
+                        <li>
+                            <HoverDropdown 
+                                id = {'categoryHoverDropdown'}
+                                title = 'Category |' 
+                                list={uniqueValueBudget(districtsDataContext.participatoryBudgetTracker.features, 'pinCategory')}
+                                clicked={(event) => {changeCategoryControls(event.target.innerHTML)}}
+                            />
+                         </li>
+                    : <li>Category |</li>}
+                    {districtsDataContext.participatoryBudgetTracker ? 
+                        <li>
+                            <HoverDropdown 
+                                id = {'yearHoverDropdown'}
+                                title = 'Year |' 
+                                list={uniqueValueBudget(districtsDataContext.participatoryBudgetTracker.features, 'vote_year')}
+                                clicked={(event) => {changeYearControls(event.target.innerHTML)}}
+                            />
+                         </li>
+                    : <li>Year |</li>}                    
                     <li>Current Council Member</li>
                 </ul>
             </nav>
