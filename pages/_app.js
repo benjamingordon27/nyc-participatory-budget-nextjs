@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
         <SidebarContextProvider>
           <ControlsContextProvider>
             {/* <NavigationBar /> */}
-            <Component {...pageProps} />
+            <Component className='website' {...pageProps} />
           </ControlsContextProvider>
         </SidebarContextProvider>
       </DistrictsDataContextProvider>
