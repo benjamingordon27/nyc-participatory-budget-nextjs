@@ -123,11 +123,20 @@ const navigationBar = (props) => {
                                 id = {'agencyHoverDropdown'}
                                 title = 'Agency |' 
                                 list={uniqueValueBudget(districtsDataContext.participatoryBudgetTracker.features, 'agency')}
-                                clicked={(event) => {console.log(event.target.innerHTML); changeAgencyControls(event.target.innerHTML)}}
+                                clicked={(event) => {changeAgencyControls(event.target.innerHTML)}}
                             />
                          </li>
                     : <li>Agency |</li>}  
-                    <li>Project Status | </li>
+                    {districtsDataContext.participatoryBudgetTracker ? 
+                        <li>
+                            <HoverDropdown 
+                                id = {'statusHoverDropdown'}
+                                title = 'Project Status |' 
+                                list={uniqueValueBudget(districtsDataContext.participatoryBudgetTracker.features, 'status_summary')}
+                                clicked={(event) => {changeStatusControls(event.target.innerHTML)}}
+                            />
+                         </li>
+                    : <li>Agency |</li>}  
                     <li>Category | </li>
                     <li>Year | </li>
                     <li>Current Council Member</li>
