@@ -17,7 +17,7 @@ const navigationBar = (props) => {
     const controlsContext = useContext(ControlsContext);
 
     const changeAgencyControls = useCallback( (agency) => {        
-        document.getElementById('agencyDropdown').value = agency;
+        document.getElementById('agencyDropdown').innerHTML = 'Agency: '+agency;
         controlsContext.dispatchControls({type: actions.UPDATE_AGENCY, agency: agency});
         router.replace(
             {
@@ -35,7 +35,7 @@ const navigationBar = (props) => {
     },[controlsContext.agency, router]);
 
     const changeStatusControls = useCallback( (status) => {
-        document.getElementById('statusDropdown').value = status;
+        document.getElementById('statusDropdown').innerHTML = 'Project status: '+status;
         controlsContext.dispatchControls({type: actions.UPDATE_STATUS, status: status});        
         router.replace(
             {
@@ -53,7 +53,7 @@ const navigationBar = (props) => {
     },[controlsContext.agency, router]);    
 
     const changeCategoryControls = useCallback( (category) => {
-        document.getElementById('categoryDropdown').value = category;
+      document.getElementById('categoryDropdown').innerHTML = 'Category: '+category;
         controlsContext.dispatchControls({type: actions.UPDATE_CATEGORY, category: category});
         router.replace(
             {
@@ -71,7 +71,7 @@ const navigationBar = (props) => {
     },[controlsContext.agency, router]);    
 
     const changeYearControls = useCallback( (year) => {
-        document.getElementById('yearDropdown').value = year;
+        document.getElementById('yearDropdown').innerHTML = 'Year: '+year;
         controlsContext.dispatchControls({type: actions.UPDATE_YEAR, year: year});
         router.replace(
             {
@@ -89,7 +89,7 @@ const navigationBar = (props) => {
     },[controlsContext.agency, router]);
 
     const changeDistrictControls = useCallback( (district) => {
-        document.getElementById('districtDropdown').value = district;
+        document.getElementById('districtDropdown').innerHTML = 'Current Council Member: '+district;
         controlsContext.dispatchControls({type: actions.UPDATE_DISTRICT, district: district});
         router.replace(
             {

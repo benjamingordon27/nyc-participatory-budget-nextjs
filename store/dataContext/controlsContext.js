@@ -18,7 +18,7 @@ export const ControlsContextProvider = (props) => {
     });
 
     const changeCategoryControls = useCallback( (category) => {
-        document.getElementById('categoryDropdown').value = category;
+        document.getElementById('categoryDropdown').innerHTML = "Category: " + category;
         dispatchControls({type: actions.UPDATE_CATEGORY, category: category});
         router.replace(
             {
@@ -36,11 +36,11 @@ export const ControlsContextProvider = (props) => {
     },[controls.agency]);  
     
     const clearControls = () => {
-        document.getElementById('districtDropdown').value = '';
-        document.getElementById('yearDropdown').value = '';
-        document.getElementById('statusDropdown').value = '';
-        document.getElementById('agencyDropdown').value = '';
-        document.getElementById('categoryDropdown').value = '';
+        document.getElementById('districtDropdown').innerHTML = '';
+        document.getElementById('yearDropdown').innerHTML = '';
+        document.getElementById('statusDropdown').innerHTML = '';
+        document.getElementById('agencyDropdown').innerHTML = '';
+        document.getElementById('categoryDropdown').innerHTML = '';
         dispatchControls({type: actions.CLEAR_CONTROLS});
     }
 

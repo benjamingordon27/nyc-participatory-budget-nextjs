@@ -105,8 +105,13 @@ let Controls = (props) => {
     },[controlsContext.agency, router]);
 
     return (
-        <div className="controls" style={{...props.propsStyle, left: '0'}}>          
-            <div style = {{float: 'left', margin: '6px'}}>
+        <div className="controls" style={{...props.propsStyle, left: '0'}}> 
+          <div id='agencyDropdown'></div> 
+          <div id='statusDropdown'></div> 
+          <div id='categoryDropdown'></div> 
+          <div id='yearDropdown'></div> 
+          <div id='districtDropdown'></div> 
+            {/* <div style = {{float: 'left', margin: '6px'}}>
                 {districtsDataContext.participatoryBudgetTracker ? 
                     <Dropdown 
                         id = {'agencyDropdown'}
@@ -114,7 +119,7 @@ let Controls = (props) => {
                         list={uniqueValueBudget(districtsDataContext.participatoryBudgetTracker.features, 'agency')}
                         handleChange={(event) => changeAgencyControls(event.target.value)}
                     />
-                : null}    
+                : null}
             </div>
             <div style = {{float: 'left', margin: '6px'}}>
                 {districtsDataContext.participatoryBudgetTracker ? 
@@ -155,7 +160,7 @@ let Controls = (props) => {
                         handleChange={(event) => changeDistrictControls(event.target.value)}
                     /> 
                 : null}
-            </div>     
+            </div>      */}
         </div>
 
     );
