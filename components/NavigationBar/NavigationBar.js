@@ -12,7 +12,7 @@ const navigationBar = (props) => {
     const sidebarContext = useContext(SidebarContext);
     const districtsDataContext = useContext(DistrictsDataContext);
 
-    console.log(districtsDataContext);
+    console.log('navigation',districtsDataContext);
 
     return(
         <header className={classes.NavigationBar}>

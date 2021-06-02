@@ -13,9 +13,6 @@ const TrackerMapPage = () => {
 
     return(             
         <div className='pageContainer'>
-            <div>
-                <NavigationBar />
-            </div>
             <div style={{display:'flex', flexDirection:'row', overflow: 'auto', flex: '1'}}>
                 <div style={{flex: '2', order: '1'}}>                    
                     <Sidebar />                    

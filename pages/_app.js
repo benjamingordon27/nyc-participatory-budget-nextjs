@@ -7,15 +7,17 @@ import NavigationBar from '../components/NavigationBar/NavigationBar';
 
 function MyApp({ Component, pageProps }) {
   return(
-    <div>
+    <div className='website'>
       <Head>      
         <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet" key="test"/>
       </Head>
       <DistrictsDataContextProvider>
         <SidebarContextProvider>
           <ControlsContextProvider>
-            {/* <NavigationBar /> */}
-            <Component className='website' {...pageProps} />
+          <div className='pageContainer'>
+              <NavigationBar />
+              <Component {...pageProps} />
+          </div>
           </ControlsContextProvider>
         </SidebarContextProvider>
       </DistrictsDataContextProvider>
