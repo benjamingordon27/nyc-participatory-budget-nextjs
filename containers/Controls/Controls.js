@@ -115,16 +115,6 @@ let Controls = (props) => {
                         handleChange={(event) => changeAgencyControls(event.target.value)}
                     />
                 : null}    
-                {districtsDataContext.participatoryBudgetTracker ? 
-                  <li>
-                      <HoverDropdown 
-                          id = {'agencyHoverDropdown'}
-                          title = 'Agency' 
-                          list={uniqueValueBudget(districtsDataContext.participatoryBudgetTracker.features, 'agency')}
-                          clicked={(event) => {console.log(event.target.innerHTML); changeAgencyControls(event.target.innerHTML)}}
-                      />
-                  </li>
-                  : <li>Agency |</li>}  
             </div>
             <div style = {{float: 'left', margin: '6px'}}>
                 {districtsDataContext.participatoryBudgetTracker ? 
