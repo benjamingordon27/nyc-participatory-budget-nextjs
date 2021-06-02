@@ -157,7 +157,16 @@ const navigationBar = (props) => {
                             />
                          </li>
                     : <li>Year |</li>}                    
-                    <li>Current Council Member</li>
+                    {districtsDataContext.participatoryBudgetTracker ? 
+                        <li>
+                            <HoverDropdown 
+                                id = {'districtHoverDropdown'}
+                                title = 'Current Council Member' 
+                                list={uniqueValueCouncilMember(districtsDataContext.councilMembers)}
+                                clicked={(event) => {changeDistrictControls(event.target.innerHTML)}}
+                            />
+                         </li>
+                    : <li>Current Council Member</li>}
                 </ul>
             </nav>
         </header>  
